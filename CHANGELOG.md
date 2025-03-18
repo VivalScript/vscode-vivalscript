@@ -39,7 +39,7 @@ All notable changes to the "vivalscript-extension" extension will be documented 
 
 - [ ] (maybe) [Possible Actions on Errors or Warnings](https://code.visualstudio.com/api/language-extensions/programmatic-language-features#possible-actions-on-errors-or-warnings)
 
-- VivalScript Compiler release
+- [VivalScript Compiler](https://github.com/VivalScript/vivalscript) release
 
 - [ ] Lang config snippet
 <!-- # lang:LANG -->
@@ -70,4 +70,4 @@ All notable changes to the "vivalscript-extension" extension will be documented 
 
 - Initial (extension) release
 
-- VivalScript Previewer release
+- [VivalScript Previewer](https://github.com/VivalScript/vivalscript-previewer) release
