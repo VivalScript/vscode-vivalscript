@@ -1,0 +1,69 @@
+{
+	"audio": {
+		"prefix": "audio",
+		"body": "audio ${TM_SELECTED_TEXT:MISSING}",
+		"description": "Defines or calls an audio object"
+	},
+	"music": {
+		"prefix": "music",
+		"body": "music ${TM_SELECTED_TEXT:MISSING}",
+		"description": "Defines or calls a 'music' type audio object"
+	},
+	"song": {
+		"prefix": "song",
+		"body": "song ${TM_SELECTED_TEXT:MISSING}",
+		"description": "Defines or calls a 'song' type music object"
+	},
+	"sound": {
+		"prefix": "sound",
+		"body": "sound ${TM_SELECTED_TEXT:MISSING}",
+		"description": "Defines or calls a 'sound effect' type audio object"
+	},
+	"ambience": {
+		"prefix": "ambience",
+		"body": "ambience ${TM_SELECTED_TEXT:MISSING}",
+		"description": "Defines or calls an 'ambience' type audio object"
+	},
+	"type": {
+		"prefix": "type",
+		"body": [
+			"type \"$1\"\r",
+			"${2|audio,music,song,sound,ambience|} ${TM_SELECTED_TEXT:MISSING}"
+		],
+		"description": "Inserts a block with type and audio statements"
+	},
+	"list": {
+		"prefix": "list",
+		"body": [
+			"list($1) {\r",
+			"\t$TM_SELECTED_TEXT\r",
+			"}"
+		],
+		"description": "Declares a callable list object"
+	},
+	"audio object": {
+		"prefix": "audioobj",
+		"body": "audio($1) ${TM_SELECTED_TEXT:${2:MISSING}}",
+		"description": "Declares a callable audio object"
+	},
+	"music object": {
+		"prefix": "musicobj",
+		"body": "music($1) ${TM_SELECTED_TEXT:${2:MISSING}}",
+		"description": "Declares a callable 'music' type audio object"
+	},
+	"song object": {
+		"prefix": "songobj",
+		"body": "song($1) ${TM_SELECTED_TEXT:${2:MISSING}}",
+		"description": "Declares a callable 'song' type music object"
+	},
+	"sound object": {
+		"prefix": "soundobj",
+		"body": "sound($1) ${TM_SELECTED_TEXT:${2:MISSING}}",
+		"description": "Declares a callable 'sound effect' type audio object"
+	},
+	"ambience object": {
+		"prefix": "ambienceobj",
+		"body": "ambience($1) ${TM_SELECTED_TEXT:${2:MISSING}}",
+		"description": "Declares a callable 'ambience' type audio object"
+	}
+}

@@ -1,0 +1,63 @@
+{
+  "name": "vivalscript-extension",
+  "displayName": "VivalScript Extension",
+  "description": "Adds Support for VivalScript - Syntax Highlighting, Snippets, Hover, and Autocompletion to Visual Studio Code.",
+  "version": "0.0.1",
+  "publisher": "VivalScript",
+  "repository": "https://github.com/VivalScript/vscode-vivalscript",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "galleryBanner": {
+    "theme": "dark",
+    "color": "#ce3d77"
+  },
+  "icon": "./media/icon.png",
+  "categories": [
+    "Programming Languages", "Snippets"
+  ],
+  "activationEvents": [
+    "workspaceContains:**/*.vsf"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [{
+      "id": "vivalscript",
+      "aliases": ["VivalScript", "vivalscript"],
+      "extensions": [".vsf"],
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "dark": "./media/icon.svg",
+        "light": "./media/icon.svg"
+      }
+    }],
+    "grammars": [{
+      "language": "vivalscript",
+      "scopeName": "source.vivalscript",
+      "path": "./syntaxes/vivalscript.tmLanguage.json"
+    }],
+    "snippets": [{
+      "language": "vivalscript",
+      "path": "./snippets/snippets.json"
+    }]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.98.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.25.0",
+    "@typescript-eslint/parser": "^8.25.0",
+    "eslint": "^9.21.0",
+    "typescript": "^5.7.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}

@@ -1,0 +1,159 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "VivalScript",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#literals"
+		},
+		{
+			"include": "#modifiers"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#headers"
+		},
+		{
+			"include": "#tags"
+		},
+		{
+			"include": "#objects"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.vivalscript",
+				"match": "\\b(?:type|id|headers)\\b"
+			}]
+		},
+		"types": {
+			"patterns": [{
+				"name": "entity.name.type.vivalscript",
+				"match": "\\b(?:audio|music|song|sound|ambience|list)\\b"
+			}]
+		},
+		"operators": {
+			"patterns": [{
+				"name": "keyword.operator.new.vivalscript",
+				"match": "\\b(?:or|not)\\b"
+			}]
+		},
+		"literals": {
+			"patterns": [{
+				"name": "constant.language.vivalscript",
+				"match": "\\b(?:MISSING|FEW)\\b"
+			}]
+		},
+		"modifiers": {
+			"patterns": [{
+				"name": "constant.character.escape.vivalscript",
+				"match": "\\b(?:main|final|alt|timed|loop|maybe)\\b"
+			}]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.vivalscript",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.vivalscript",
+							"match": "\\\\."
+						},
+						{
+							"name": "constant.character.escape.vivalscript",
+							"match": "\\*[^*]+\\*"
+						}
+					]
+				},
+				{
+					"name": "string.quoted.single.vivalscript",
+					"begin": "'",
+					"end": "'",
+					"patterns": [
+						{
+							"name": "constant.character.escape.vivalscript",
+							"match": "\\\\."
+						},
+						{
+							"name": "constant.character.escape.vivalscript",
+							"match": "\\*[^*]+\\*"
+						}
+					]
+				}
+			]
+			
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.number-sign.vivalscript",
+					"match": "#.*"
+				},
+				{
+					"name": "comment.block.vivalscript",
+					"begin": "(\"\"\"|''')",
+					"end": "(\"\"\"|''')",
+					"patterns": [{
+						"name": "constant.character.escape.vivalscript",
+						"match": "\\*[^*]+\\*"
+					}]
+				}
+			]
+		},
+		"headers": {
+			"name": "markup.heading.vivalscript.string",
+			"match": "^\\s*([0-9]*)\\s*>([^#]*)",
+			"captures": {
+				"1": {
+					"name": "constant.numeric.vivalscript"
+				},
+				"2": {
+					"patterns": [
+						{
+							"name": "markup.bold.vivalscript",
+							"match": "\\*[^*]*\\*"
+						},
+						{
+							"name": "markup.italic.vivalscript",
+							"match": "_[^_]*_"
+						}
+					]
+				}
+			}
+		},
+		"tags": {
+			"name": "entity.name.function.vivalscript",
+			"match": "\\[([^\"\\]]+)\\]",
+			"captures": {
+				"1": {
+					"name": "string.regexp.vivalscript",
+					"patterns": [{
+						"name": "constant.character.escape.vivalscript",
+						"match": "(?:\\.|\\*|\\+|\\?|\\^|\\$|\\{|\\}|\\(|\\)|\\||\\[|\\]|\\\\)"
+					}]
+				}
+			}
+		},
+		"objects": {
+			"name": "variable.name.vivalscript",
+			"match": "(?<=\\b(?:audio|music|song|sound|ambience|list)\\()[a-zA-Z_][a-zA-Z_0-9]*(?=\\))"
+		}
+	},
+	"scopeName": "source.vivalscript"
+}
