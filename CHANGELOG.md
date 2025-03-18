@@ -21,7 +21,7 @@ All notable changes to the "vivalscript-extension" extension will be documented 
 
 - [x] Show Definitions
 
-- [ ] (maybe) Highlight an id string with regex
+- [ ] (maybe) Highlight an id string with regex scope
 
 - [ ] Hovers and Definitions for local files
 
